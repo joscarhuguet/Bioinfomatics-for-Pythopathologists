@@ -1,0 +1,4 @@
+module load ufrc
+srundev -t 60 -m=4G
+module load ncbi_blast
+perl ANI.pl --fd formatdb --bl blastall --qr lab8/contigs.fasta --sb lab8/CLsolanacearum.fasta --od ani

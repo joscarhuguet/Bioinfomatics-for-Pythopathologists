@@ -1,0 +1,4 @@
+module load ufrc
+srundev -t 60 -m=4G
+module load parsnp
+parsnp -r lab8/CLamericanusSPaulo.fasta -d lab8/ -c -o results

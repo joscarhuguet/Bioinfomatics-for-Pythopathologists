@@ -1,0 +1,14 @@
+module load ufrc
+srundev -t 60 -m=4G
+module load gnuplot/4.6.0
+module load mummer
+##compare at nuclotide level 
+nucmer CLamericanusSPaulo.fasta CLasiaticusGxpsy.fasta
+show-snps out.delta > out.snps
+show-coords out.delta > out.coor
+mummerplot -p nucl --postscript out.delta
+
+
+##compare at translated - nucleotide level
+prommer CLamericanusSPaulo.fasta CLasiaticusGxpsy.fasta
+mummerplot -p prot --postscript out.delta
